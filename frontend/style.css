@@ -1,0 +1,304 @@
+
+/* General styling */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #f4f6fb;
+    color: #1d2333;
+}
+
+/* Main application */
+.app {
+    max-width: 680px;
+    margin: 50px auto;
+    padding: 28px;
+    background: white;
+    border: 1px solid #e2e6f0;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.app__header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.app__title {
+    font-size: 28px;
+    margin: 0;
+}
+
+.app__subtitle {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* Add task form */
+.task-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.task-form__input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.task-form__input:focus {
+    outline: none;
+    border-color: #4f6ef7;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btn--primary {
+    background: #4f6ef7;
+    color: white;
+}
+
+.btn--primary:hover {
+    background: #3f5ce0;
+}
+
+.btn--ghost {
+    background: #eef1f8;
+    color: #333;
+}
+
+.btn--danger {
+    background: #fdecec;
+    color: #e5484d;
+}
+
+.btn--small {
+    padding: 6px 10px;
+    font-size: 12px;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Message banner */
+.banner {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.banner[hidden] {
+    display: none;
+}
+
+.banner--info {
+    background: #e8f1ff;
+    color: #1d4ed8;
+}
+
+.banner--success {
+    background: #e6f6ef;
+    color: #1f7a55;
+}
+
+.banner--error {
+    background: #fdecec;
+    color: #a3282c;
+}
+
+/* Toolbar */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Filter buttons */
+.filters {
+    display: flex;
+    gap: 5px;
+}
+
+.chip {
+    padding: 7px 14px;
+    border: none;
+    border-radius: 20px;
+    background: #eef1f8;
+    color: #6b7280;
+    cursor: pointer;
+}
+
+.chip:hover {
+    color: #333;
+}
+
+.chip.is-active {
+    background: #4f6ef7;
+    color: white;
+}
+
+/* Task counter */
+.counter {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* Task list */
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Individual task */
+.task {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: white;
+    border: 1px solid #e2e6f0;
+    border-radius: 10px;
+}
+
+.task:hover {
+    border-color: #4f6ef7;
+}
+
+/* Checkbox and task title */
+.task__check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    cursor: pointer;
+}
+
+.task__check input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #4f6ef7;
+}
+
+.task__title {
+    flex: 1;
+    overflow-wrap: anywhere;
+}
+
+/* Completed task */
+.task--done {
+    background: #fbfcff;
+}
+
+.task--done .task__title {
+    color: #6b7280;
+    text-decoration: line-through;
+}
+
+/* Task action buttons */
+.task__actions {
+    display: flex;
+    gap: 6px;
+}
+
+/* Editing task */
+.task--editing {
+    background: #e8ecff;
+    border-color: #4f6ef7;
+}
+
+.task__edit-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #4f6ef7;
+    border-radius: 6px;
+}
+
+/* Empty task message */
+.empty {
+    padding: 25px;
+    margin-top: 20px;
+    text-align: center;
+    color: #6b7280;
+    background: #eef1f8;
+    border-radius: 10px;
+}
+
+.empty[hidden] {
+    display: none;
+}
+
+/* Footer */
+.app__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+    color: #6b7280;
+    font-size: 13px;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+
+    .app {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    .task-form {
+        flex-direction: column;
+    }
+
+    .task-form .btn {
+        width: 100%;
+    }
+
+    .toolbar {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .task {
+        flex-wrap: wrap;
+    }
+
+    .task__actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .app__footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Task List — SYD204</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1>Task List</h1>
+      <p class="app__subtitle">Express + MySQL + MVC</p>
+    </header>
+
+    <form id="task-form" class="task-form" autocomplete="off">
+      <input id="task-title" class="task-form__input" type="text"
+             placeholder="What needs doing?" maxlength="255" required />
+      <button class="btn btn--primary" type="submit" id="submit-btn">Add task</button>
+    </form>
+
+    <div id="banner" class="banner" role="status" aria-live="polite" hidden></div>
+
+    <div class="toolbar">
+      <div class="filters" role="group" aria-label="Filter tasks">
+        <button type="button" class="chip is-active" data-filter="all">All</button>
+        <button type="button" class="chip" data-filter="active">Active</button>
+        <button type="button" class="chip" data-filter="done">Done</button>
+      </div>
+      <span id="counter" class="counter">0 tasks</span>
+    </div>
+
+    <ul id="task-list" class="task-list"></ul>
+
+    <p id="empty" class="empty" hidden>No tasks yet — add your first one above.</p>
+
+    <footer class="app__footer">
+      <button id="refresh-btn" class="btn btn--ghost" type="button">Refresh</button>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
